@@ -1,6 +1,28 @@
+
 # Container-Based Application Best Practices
 
 Container-based applications are a modern approach to building, deploying, and running software in a consistent and efficient way. By packaging an application together with its dependencies into a container, developers can ensure that the application runs the same across development, testing, and production environments. This approach improves reliability, simplifies deployment, and makes applications easier to scale on local servers, cloud platforms, or container orchestration systems.
+
+
+## Table of Contents
+
+1. [History of Containers and Docker](https://github.com/dendie-sanjaya/best-practice-docker-build#1-history-of-containers-and-docker)
+2. [When Should Containers Be Used?](https://github.com/dendie-sanjaya/best-practice-docker-build#2-when-should-containers-be-used)
+3. [Container-Based Application Flow](https://github.com/dendie-sanjaya/best-practice-docker-build#3-container-based-application-flow)
+  - [Local Developer Environment (Build Phase)](https://github.com/dendie-sanjaya/best-practice-docker-build#31-local-developer-environment-build-phase)
+    - [Source Code](https://github.com/dendie-sanjaya/best-practice-docker-build#312-source-code)
+    - [Dockerfile](https://github.com/dendie-sanjaya/best-practice-docker-build#313-dockerfile)
+    - [Docker Build](https://github.com/dendie-sanjaya/best-practice-docker-build#314-docker-build)
+    - [Docker Scan Vulnerability Image](https://github.com/dendie-sanjaya/best-practice-docker-build#315-docker-scan-vulnerability-image)
+    - [Docker Tag](https://github.com/dendie-sanjaya/best-practice-docker-build#316-docker-tag)
+    - [Docker Repository](https://github.com/dendie-sanjaya/best-practice-docker-build#317-docker-repository)
+    - [Docker Login](https://github.com/dendie-sanjaya/best-practice-docker-build#318-docker-login)
+    - [Docker Push](https://github.com/dendie-sanjaya/best-practice-docker-build#319-docker-push)
+  - [Server Environment](https://github.com/dendie-sanjaya/best-practice-docker-build#32-server-environment)
+    - [Docker Compose](https://github.com/dendie-sanjaya/best-practice-docker-build#321-docker-compose)
+    - [Test Apps](https://github.com/dendie-sanjaya/best-practice-docker-build#322-test-apps)
+      - [Portainer](https://github.com/dendie-sanjaya/best-practice-docker-build#3221-portainer)
+      - [Application My App via Postman](https://github.com/dendie-sanjaya/best-practice-docker-build#3222-application-my-app-via-postman)
 
 
 ## 1. History of Containers and Docker
