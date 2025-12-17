@@ -17,7 +17,7 @@ These technologies use Linux features such as **namespaces** and **cgroups** to 
 ### The Birth of Docker (2013)
 Docker changed the industry by providing easy-to-use tools and open standards on top of existing container technologies. Docker makes it simple to package, distribute, and run applications consistently across environments.
 
----
+
 
 ## 2. When Should Containers Be Used?
 
@@ -32,7 +32,7 @@ Container-based development is suitable for:
 - **Easy Deployment to Cloud or On-Premise**  
   Applications can be deployed and scaled on cloud platforms (AWS, Azure, GCP) or local servers using Kubernetes, Docker Engine, or Docker Compose.
 
----
+
 
 ## 3. Container-Based Application Flow
 
@@ -40,7 +40,7 @@ Below is the general flow of a container-based application:
 
 ![Architecture Diagram](./design/arsitekur.png)
 
----
+
 
 ## 3.1 Local Developer Environment (Build Phase)
 
@@ -50,7 +50,7 @@ In this example, the application is written in **Golang** and provides two API e
 
 ![Golang Source Code](./ss/golang.jpg)
 
----
+
 
 ### 3.1.2 Dockerfile
 A **Dockerfile** contains instructions to build a Docker image.
@@ -62,7 +62,7 @@ Main steps in the Dockerfile:
 2. Copy the source code into the image
 3. Compile the Go application
 
----
+
 
 ### 3.1.3 Docker Build
 Docker Build is the process of creating a Docker image from a Dockerfile.
@@ -80,7 +80,7 @@ docker build . -t my-apps:1.0
 ![Docker Build](./ss/docker-build.jpg)
 ![Docker Build Result](./ss/docker-build-2.jpg)
 
----
+
 
 ### 3.1.4 Docker Image Vulnerability Scan
 This step checks the image for known security vulnerabilities.
@@ -90,7 +90,7 @@ This step checks the image for known security vulnerabilities.
 - **Fail (Red Path)**: Critical vulnerabilities found, build must be fixed.
 - **Pass (Green Path)**: Image is safe and can continue.
 
----
+
 
 ### 3.1.5 Docker Tag
 Docker Tag gives the image a name and version, and prepares it for upload to a container registry.
@@ -102,7 +102,7 @@ docker tag my-apps:1.0 dendie/my-apps:1.0
 
 ![Docker Tag](./ss/docker-tag.jpg)
 
----
+
 
 ### 3.1.6 Docker Repository
 Prepare a repository in a container registry (example: Docker Hub).
@@ -110,7 +110,7 @@ Prepare a repository in a container registry (example: Docker Hub).
 ![Docker Hub Repository](./ss/docker-hub-1.jpg)
 ![Docker Hub Repository](./ss/docker-hub-3.jpg)
 
----
+
 
 ### 3.1.7 Docker Login
 Before pushing images, log in using an access token.
@@ -120,7 +120,7 @@ Before pushing images, log in using an access token.
 ![Docker Login](./ss/docker-login-4.jpg)
 ![Docker Login](./ss/docker-login-5.jpg)
 
----
+
 
 ### 3.1.8 Docker Push
 Docker Push uploads the tagged image to Docker Hub so it can be used by servers.
@@ -133,7 +133,7 @@ docker push dendie/my-apps:1.0
 ![Docker Push](./ss/docker-push.jpg)
 ![Docker Push Result](./ss/docker-push-2.jpg)
 
----
+
 
 ## 3.2 Server Environment
 
@@ -153,7 +153,7 @@ Docker will:
 1. Pull the application image from Docker Hub
 2. Create and run containers for the application and Portainer
 
----
+
 
 ### 3.2.2 Application Testing
 
@@ -164,7 +164,7 @@ Portainer provides a web UI to manage Docker.
 ![Portainer Containers](./ss/portainer-2.jpg)
 ![Portainer Details](./ss/portainer-3.jpg)
 
----
+
 
 #### 3.2.2.2 Testing the Application with Postman
 The application container can be tested using Postman.
