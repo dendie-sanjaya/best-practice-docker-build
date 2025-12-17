@@ -64,9 +64,9 @@ Below is the general flow of a container-based application:
 
 
 
-## 3.1 Local Developer Environment (Build Phase)
+### 3.1 Local Developer Environment (Build Phase)
 
-### 3.1.1 Source Code
+#### 3.1.1 Source Code
 This folder contains the application source code.  
 In this example, the application is written in **Golang** and provides two API endpoints.
 
@@ -74,7 +74,7 @@ In this example, the application is written in **Golang** and provides two API e
 
 
 
-### 3.1.2 Dockerfile
+#### 3.1.2 Dockerfile
 A **Dockerfile** contains instructions to build a Docker image.
 
 ![Dockerfile Example](./ss/docker-file.jpg)
@@ -86,7 +86,7 @@ Main steps in the Dockerfile:
 
 
 
-### 3.1.3 Docker Build
+#### 3.1.3 Docker Build
 Docker Build is the process of creating a Docker image from a Dockerfile.
 
 Command format:
@@ -104,7 +104,7 @@ docker build . -t my-apps:1.0
 
 
 
-### 3.1.4 Docker Image Vulnerability Scan
+#### 3.1.4 Docker Image Vulnerability Scan
 This step checks the image for known security vulnerabilities.
 
 ![Docker Scan](./ss/docker-scan-vurnability.jpg)
@@ -114,7 +114,7 @@ This step checks the image for known security vulnerabilities.
 
 
 
-### 3.1.5 Docker Tag
+#### 3.1.5 Docker Tag
 Docker Tag gives the image a name and version, and prepares it for upload to a container registry.
 
 Example:
@@ -126,7 +126,7 @@ docker tag my-apps:1.0 dendie/my-apps:1.0
 
 
 
-### 3.1.6 Docker Repository
+#### 3.1.6 Docker Repository
 Prepare a repository in a container registry (example: Docker Hub).
 
 ![Docker Hub Repository](./ss/docker-hub-1.jpg)
@@ -134,7 +134,7 @@ Prepare a repository in a container registry (example: Docker Hub).
 
 
 
-### 3.1.7 Docker Login
+#### 3.1.7 Docker Login
 Before pushing images, log in using an access token.
 
 ![Docker Login](./ss/docker-login-2.jpg)
@@ -144,7 +144,7 @@ Before pushing images, log in using an access token.
 
 
 
-### 3.1.8 Docker Push
+#### 3.1.8 Docker Push
 Docker Push uploads the tagged image to Docker Hub so it can be used by servers.
 
 Example:
@@ -157,9 +157,9 @@ docker push dendie/my-apps:1.0
 
 
 
-## 3.2 Server Environment
+### 3.2 Server Environment
 
-### 3.2.1 Docker Compose
+#### 3.2.1 Docker Compose
 Docker Compose uses a YAML file to define which services should run, including:
 - Application container
 - Portainer (Docker UI management tool)
@@ -177,9 +177,9 @@ Docker will:
 
 
 
-### 3.2.2 Application Testing
+#### 3.2.2 Application Testing
 
-#### 3.2.2.1 Portainer
+##### 3.2.2.1 Portainer
 Portainer provides a web UI to manage Docker.
 
 ![Portainer UI](./ss/portainer.jpg)
@@ -188,7 +188,7 @@ Portainer provides a web UI to manage Docker.
 
 
 
-#### 3.2.2.2 Testing the Application with Postman
+##### 3.2.2.2 Testing the Application with Postman
 The application container can be tested using Postman.
 
 ![Postman Test](./ss/postmant.jpg)
