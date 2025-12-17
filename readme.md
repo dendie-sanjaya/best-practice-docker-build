@@ -164,7 +164,7 @@ Docker Compose uses a YAML file to define which services should run, including:
 - Application container
 - Portainer (Docker UI management tool)
 
-![Docker Compose](./ss/docker-compse.jpg)
+![Docker Compose](./ss/docker-compose.jpg)
 
 Run the services:
 ```bash
