@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Layanan Aplikasi Golang Anda
+  app:
+    # Ganti 'namauser/nama-aplikasi' dengan image yang Anda push ke Docker Hub
+    image: dendie/my-apps:1.0
+    container_name: golang_app_container
+    restart: always
+    ports:
+      # Peta port HOST:CONTAINER
+      - "80:8080"
+    # Menambahkan pengecekan kesehatan (optional, best practice)
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Layanan Portainer
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: always
+    ports:
+      # Portainer biasanya berjalan di 9000
+      - "9000:9000"
+    volumes:
+      # Memungkinkan Portainer mengakses Docker Engine host
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Volume untuk menyimpan data Portainer
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
